@@ -1,0 +1,29 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres:15
+    container_name: postgres_container
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 12345678
+      POSTGRES_DB: mundoanimal
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  javafx-app:
+    build:
+      context: .
+    container_name: javafx_app_container
+    depends_on:
+      - postgres
+    environment:
+      HIBERNATE_CONNECTION_URL: jdbc:postgresql://postgres:5432/mundoanimal
+      HIBERNATE_CONNECTION_USERNAME: postgres
+      HIBERNATE_CONNECTION_PASSWORD: 12345678
+    ports:
+      - "8080:8080"
+
+volumes:
+  postgres_data:

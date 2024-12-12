@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="309.0" prefWidth="458.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="19.0" layoutY="14.0" text="Próximas atividades" textFill="#ababab">
+         <font>
+            <Font name="Arial" size="16.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="75.0" fitWidth="130.0" layoutX="14.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/banho.PNG" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="75.0" fitWidth="130.0" layoutX="164.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/banho.PNG" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="68.0" fitWidth="130.0" layoutX="299.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/banho.PNG" />
+         </image>
+      </ImageView>
+      <Label layoutX="234.0" layoutY="139.0" text="Atividades mais realizadas este mês" textFill="#909090">
+         <font>
+            <Font name="Arial" size="13.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="118.0" fitWidth="200.0" layoutX="234.0" layoutY="154.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/grafico.PNG" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="19.0" layoutY="155.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/atv.PNG" />
+         </image>
+      </ImageView>
+      <Label layoutX="26.0" layoutY="139.0" text="Últimas atividades" textFill="#909090">
+         <font>
+            <Font name="Arial" size="13.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>

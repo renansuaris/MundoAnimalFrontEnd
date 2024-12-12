@@ -10,49 +10,49 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="503.0" prefWidth="382.0" style="-fx-border-color: #1916A1; -fx-border-width: 3px;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.renan.mundoanimalfrontend.SceneController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="455.0" prefWidth="654.0" style="-fx-border-color: #1916A1; -fx-border-width: 3px;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.renan.mundoanimalfrontend.SceneController">
    <children>
-      <ImageView fitHeight="128.0" fitWidth="234.0" layoutX="75.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="128.0" fitWidth="234.0" layoutX="211.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="211.0" AnchorPane.rightAnchor="176.0">
          <image>
             <Image url="@../../../images/logo-petshop.png" />
          </image>
       </ImageView>
-      <TextField fx:id="txtLoginPageCpf" layoutX="60.0" layoutY="203.0" prefHeight="40.0" prefWidth="262.0" promptText="XXX.XXX.XXX-XX" style="-fx-background-radius: 0; -fx-border-radius: 0; -fx-border-color: #1916A1;">
+      <TextField fx:id="txtLoginPageCpf" layoutX="231.0" layoutY="177.0" prefHeight="41.0" prefWidth="212.0" promptText="XXX.XXX.XXX-XX" style="-fx-background-radius: 0; -fx-border-radius: 0; -fx-border-color: #1916A1;" AnchorPane.leftAnchor="231.0" AnchorPane.rightAnchor="196.0">
          <font>
             <Font size="18.0" />
          </font>
       </TextField>
-      <PasswordField fx:id="txtLoginPagePassword" layoutX="61.0" layoutY="287.0" prefHeight="40.0" prefWidth="262.0" promptText="**********" style="-fx-border-color: #1916A1; -fx-border-radius: 0; -fx-background-radius: 0;">
+      <PasswordField fx:id="txtLoginPagePassword" layoutX="234.0" layoutY="258.0" prefHeight="41.0" prefWidth="212.0" promptText="**********" style="-fx-border-color: #1916A1; -fx-border-radius: 0; -fx-background-radius: 0;" AnchorPane.leftAnchor="234.0" AnchorPane.rightAnchor="199.0">
          <font>
             <Font size="18.0" />
          </font>
       </PasswordField>
-      <Button layoutX="61.0" layoutY="366.0" mnemonicParsing="false" onAction="#loginUser" prefHeight="41.0" prefWidth="262.0" style="-fx-background-color: #1916A1; -fx-background-radius: 0; -fx-border-radius: 0; -fx-text-fill: #FFFFFF; -fx-cursor: hand;" text="ENTRAR">
+      <Button layoutX="234.0" layoutY="331.0" mnemonicParsing="false" onAction="#loginUser" prefHeight="41.0" prefWidth="212.0" style="-fx-background-color: #1916A1; -fx-background-radius: 0; -fx-border-radius: 0; -fx-text-fill: #FFFFFF; -fx-cursor: hand;" text="ENTRAR" AnchorPane.leftAnchor="234.0" AnchorPane.rightAnchor="199.0">
          <font>
             <Font name="Arial Bold" size="13.0" />
          </font>
       </Button>
-      <Hyperlink layoutX="176.0" layoutY="325.0" onAction="#goToRecover" opacity="0.48" prefHeight="41.0" prefWidth="193.0" style="-fx-text-fill: #000000;" text="ESQUECEU SUA SENHA?" underline="true">
+      <Hyperlink layoutX="258.0" layoutY="290.0" onAction="#goToRecover" opacity="0.48" prefHeight="41.0" prefWidth="193.0" style="-fx-text-fill: #000000;" text="ESQUECEU SUA SENHA?" underline="true">
          <font>
             <Font name="Arial Bold" size="11.0" />
          </font>
       </Hyperlink>
-      <Text layoutX="61.0" layoutY="196.0" opacity="0.55" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-line-spacing: 10;" text="CPF">
+      <Text layoutX="230.0" layoutY="173.0" opacity="0.55" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-line-spacing: 10;" text="CPF">
          <font>
             <Font size="17.0" />
          </font>
       </Text>
-      <Text layoutX="60.0" layoutY="280.0" opacity="0.55" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-line-spacing: 10;" text="Senha">
+      <Text layoutX="235.0" layoutY="251.0" opacity="0.55" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-line-spacing: 10;" text="Senha">
          <font>
             <Font size="17.0" />
          </font>
       </Text>
-      <Text layoutX="106.0" layoutY="455.0" opacity="0.55" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-line-spacing: 10;" text="Novo usuário?">
+      <Text layoutX="235.0" layoutY="400.0" opacity="0.55" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-line-spacing: 10;" text="Novo usuário?">
          <font>
             <Font name="Arial Bold" size="14.0" />
          </font>
       </Text>
-      <Button layoutX="204.0" layoutY="438.0" mnemonicParsing="false" onAction="#goToRegister" style="-fx-background-color: transparent; -fx-text-fill: #1916A1; -fx-cursor: hand;" text="Cadastrar">
+      <Button layoutX="331.0" layoutY="383.0" mnemonicParsing="false" onAction="#goToRegister" style="-fx-background-color: transparent; -fx-text-fill: #1916A1; -fx-cursor: hand;" text="Cadastrar">
          <font>
             <Font name="Arial Bold" size="13.0" />
          </font>

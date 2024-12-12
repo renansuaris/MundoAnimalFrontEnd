@@ -5,21 +5,33 @@ import jakarta.persistence.TypedQuery;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import org.renan.mundoanimalfrontend.model.UserPet;
 
+import java.io.IOException;
+import java.net.URL;
+import java.util.Optional;
+import java.util.ResourceBundle;
 
-public class SceneController {
+
+public class SceneController implements Initializable {
 
     private Stage stage;
     private Scene scene;
     private Parent root;
+
+    @FXML
+    private StackPane contentArea;
+
+    @FXML
+    private Button botaoSair;
 
     @FXML
     private TextField txtName;
@@ -31,6 +43,7 @@ public class SceneController {
     private TextField txtPhone;
     @FXML
     private PasswordField txtPassword;
+
 
     @FXML
     private TextField txtLoginPageCpf;
@@ -109,6 +122,45 @@ public class SceneController {
         }
     }
 
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        setContentAreaInicio();
+    }
+
+    @FXML
+    private void setContentAreaInicio() {
+        loadScene("inicio.fxml");
+    }
+
+    @FXML
+    private void setContentAreaPets() {
+        loadScene("pets.fxml");
+    }
+
+    @FXML
+    private void setContentAreaClientes() {
+        loadScene("clientes.fxml");
+    }
+
+    @FXML
+    private void setContentAreaHistorico() {
+        loadScene("historico.fxml");
+    }
+
+
+    private void loadScene(String fxmlFile) {
+        try {
+            // Carrega o layout FXML especificado.
+            Pane newContent = FXMLLoader.load(getClass().getResource(fxmlFile));
+            // Limpa o conteúdo atual do centro.
+            contentArea.getChildren().clear();
+            // Adiciona o novo conteúdo.
+            contentArea.getChildren().add(newContent);
+        } catch (Exception e) {
+            e.printStackTrace(); // Para depuração em caso de erros.
+        }
+    }
+
     // Método para mostrar alertas
     private void showAlert(Alert.AlertType alertType, String title, String message) {
         Alert alert = new Alert(alertType);
@@ -123,6 +175,32 @@ public class SceneController {
         alert.setTitle(title);
         alert.setContentText(message);
         alert.showAndWait();
+    }
+
+    @FXML
+    public void logout(ActionEvent event) {
+        // Criar o alerta de confirmação
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Confirmação de Logout");
+        alert.setHeaderText("Você realmente deseja sair?");
+        alert.setContentText("Se sair, será redirecionado para a tela de login.");
+
+        // Exibir o alerta e aguardar a resposta do usuário
+        Optional<ButtonType> result = alert.showAndWait();
+
+        // Verificar a resposta
+        if (result.isPresent() && result.get() == ButtonType.OK) {
+            try {
+                // Redirecionar para a tela de login
+                Parent root = FXMLLoader.load(getClass().getResource("login-view.fxml"));
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                Scene scene = new Scene(root);
+                stage.setScene(scene);
+                stage.show();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     public void goToLogin(ActionEvent event) throws Exception {
@@ -150,7 +228,7 @@ public class SceneController {
     }
 
     public void goToDashboard(ActionEvent event) throws Exception {
-        root = FXMLLoader.load(getClass().getResource("dashboard-view.fxml"));
+        root = FXMLLoader.load(getClass().getResource("newdashboard.fxml"));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
